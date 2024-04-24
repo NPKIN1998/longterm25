@@ -33,6 +33,7 @@ Route::get('/dashboard',[DashboardController::class, 'index'])->middleware(['aut
 Route::get('/deposit', [DepositController::class, 'index'])->name('deposit');
 Route::get('/withdrawal', [WithdrawalController::class, 'index'])->name('withdrawal');
 Route::get('/product', [AssetController::class, 'index'])->name('product');
+Route::get('/orderproduct', [AssetController::class, 'quickPackage'])->name('order.product');
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

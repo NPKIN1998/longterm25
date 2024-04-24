@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use App\Http\Controllers\InvestController;
 
 class DashboardController extends Controller
 {
     public function index()
     {
+
+     //check for payments
+     $payUser = new InvestController();
+
+     $payUser->payMaturedTrades();
 
       $user = Auth::user();
 
